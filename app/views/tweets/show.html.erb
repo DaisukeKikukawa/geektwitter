@@ -1,0 +1,57 @@
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+<h3 class="top">Tweet</h3>
+
+<div class="tweet-container">
+<div class="tweet">
+  
+  <h3><%= @tweet.body %></h3>
+  <p><%= @tweet.created_at %></p>
+
+  <h3>いいね件数: <%= @tweet.likes.count %></>
+  <% if current_user.already_liked?(@tweet) %>
+    <%= button_to 'いいねを取り消す', tweet_like_path(@tweet), method: :delete %>
+  <% else %>
+    <%= button_to 'いいね', tweet_likes_path(@tweet) , class: "btn btn-primary bg-primary"%>
+  <% end %>
+
+</div>
+
+<div class="like">
+<h2>いいねしたユーザー</h2>
+<% @tweet.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+</div>
+</div>
+
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.comment %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+      <%= f.text_area :comment%>
+      <br>
+      <%= button_tag type: "submit" do %>
+      
+        <i class="far fa-comments "></i> コメントする
+      
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>
+
+<div class="last">
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+<%# <%= link_to "Tweet一覧に戻る", tweets_path %> 
+</div>
+

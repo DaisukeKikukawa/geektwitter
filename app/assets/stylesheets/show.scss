@@ -1,0 +1,42 @@
+.last {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.top {
+  text-align: center;
+  padding-top: 20px;
+  color: #00acee;
+  // background-color: #FFFF00;
+  height: 80px;
+  font-weight: bold;
+}
+
+.tweet-container {
+  // background-color: beige;
+}
+
+.comment-wrapper {
+  text-align: center;
+  // background-color: bisque;
+}
+
+.tweet {
+  text-align: center;
+}
+
+.like {
+  text-align: center;
+  // background-color: aquamarine;
+}
+
+input[type="text"] {
+  width: 95%;
+  height: 40px;
+}
+input[type="submit"] {
+  width: 200px;
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}

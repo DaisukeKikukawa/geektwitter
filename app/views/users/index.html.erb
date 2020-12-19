@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag 'users', :media => "all" %>
+
+<h1 class="top">ユーザー </h1>
+<% @users.each do |user| %>
+  <hr>
+  <p><span>email: </span><%=link_to user.email, user_path(user.id) %></p>
+<% end %>

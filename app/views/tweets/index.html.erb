@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+
+<h3 class="top"></h3>
+
+<div class="search">
+  <%# <h3>投稿を検索</h3> %>
+  <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Tweetを検索' , class: "btn btn-primary bg-primary" %>
+  <% end %>
+</div>
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <div class="main-box">
+        <div class="left-conteiner">
+          <div class="name">
+            <%=link_to t.user.email, user_path(t.user.id) %>
+          </div>
+            <%= image_tag t.image_url , size: "200"%>
+          <div class="t-body">
+            <%= t.body%>
+          </div>
+        </div>
+        <div class="right-container">
+          <%= link_to "詳細", tweet_path(t.id) %>
+          <%= link_to "編集", edit_tweet_path(t.id) %>
+          <%= link_to "削除", tweet_path(t.id), method: :delete %>
+      </div>
+    </div>
+        <p class="time"><%= t.created_at%></p>
+    </div>
+  <% end%>
+</div>
+
+
+
+
+<%# <%= link_to "新規投稿ページへ", new_tweet_path %>
+
+
+<%# <%= t.user.email%> 
+<%# <%= image_tag t.image_url %>
+<%# (♡<%= t.liked_users.count %>
+
+

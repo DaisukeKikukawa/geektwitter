@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'edit', :media => "all" %>
+
+<h1 class="top">Tweet編集</h1>
+
+<div class="container">
+
+  
+
+  <%= form_for @tweet do |f| %>
+  <div class="post">
+    <%= f.label :編集%>
+    <%= f.text_field :body, :size => 140 %> 
+  </div>
+  <div class="button">
+    <%= f.submit "Edit" , class: "btn btn-primary bg-dark"%>
+  </div>
+  <% end %>
+
+</div>
+
+

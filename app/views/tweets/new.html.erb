@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+
+<div class="post-container">
+  <p class="title">投稿フォーム</p>
+  <%# <%= form_for @tweet do |f|  %>
+  <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
+    <%= f.label :投稿内容%>
+    <br>
+    <%= f.text_field :body, :size => 140 %>
+    <br>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    
+    <%=f.submit "Tweetする", class: "btn btn-primary bg-primary"%>
+    <br>
+  <%end%>
+</div>
+
+<%# <div class="last">
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+<%# </div> %>

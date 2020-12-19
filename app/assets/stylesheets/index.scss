@@ -1,0 +1,59 @@
+.tweets-container {
+  width: 50%;
+  margin: 10px auto;
+}
+.top {
+  text-align: center;
+  padding-top: 20px;
+  color: #00acee;
+  // background-color: #FFFF00;
+  height: 80px;
+  font-weight: bold;
+}
+.tweet {
+  border-top: solid #00acee;
+  margin-top: 10px;
+  padding-top: 20px;
+  background-color: antiquewhite
+}
+.main-box {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.last {
+  text-align: center;
+}
+
+body {
+  // background-color: antiquewhite;
+}
+
+.name {
+  padding-bottom: 30px;
+}
+
+.post-image {
+  height: 50px;
+  width: 50px;
+}
+
+.search {
+  text-align: center;
+}
+
+input[type="text"] {
+  font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 30%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 5px solid #00acee;
+	border-radius: 4px;
+}
